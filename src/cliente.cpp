@@ -27,15 +27,14 @@ void Cliente::transferencia(Transaccion transaccion){
     else{
         dinero = dinero - transaccion.getCantidad();
         transacciones.push_back(transaccion);
-       std::cout << "Se realizo la transacción con valor de " << transaccion.getCantidad() << " a nuestra tienda. Gracias!" << std::endl;
+        std::cout << "Se realizo la transacción con valor de " << transaccion.getCantidad() << " a nuestra tienda. Gracias!" << std::endl;
     }
-    
 }
 
 void Cliente::remover(){
     Transaccion temp = transacciones.back();
     transacciones.pop_back();
-    std::cout << "Se removio la transaccion con ID" <<temp.getID() << endl;
+    std::cout << "Se removio la transaccion con ID" <<temp.getID() << endl; 
 }
 
 vector<Transaccion> Cliente::getTransacciones(){

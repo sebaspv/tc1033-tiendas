@@ -1,4 +1,4 @@
-/**
+/* 
  * @file transaccion.h
  *
  * @author Sebastian Ponce
@@ -45,9 +45,14 @@ int main(){
             cliente.transferencia(Transaccion(tipo, cantidad));
         }
         else if (opcion == 2){
-            double refund = cliente.getTransacciones().back().getCantidad();
-            cliente.setDinero(cliente.getDinero() + refund);
-            cliente.remover();
+            if (cliente.getTransacciones().empty()){
+              cout << "No hay transacciones en tu historial" << endl;
+            }
+            else {
+              double refund = cliente.getTransacciones().back().getCantidad();
+              cliente.setDinero(cliente.getDinero() + refund);
+              cliente.remover();
+            }
         }
         else if (opcion == 1){
             for (auto a: cliente.getTransacciones()){
